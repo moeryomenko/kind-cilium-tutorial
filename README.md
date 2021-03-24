@@ -1,8 +1,9 @@
-Kind K8s cluster with cilium cni plugin.
+Kind HA K8s cluster with cilium cni plugin.
 
 # Prerequest
 
 Docker
+
 Go 1.11+
 
 # Prepare
