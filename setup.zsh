@@ -8,11 +8,11 @@ kubectl cluster-info --context kind-kind
 helm repo add cilium https://helm.cilium.io/
 
 # Preload the cilium image into each worker node in the kind cluster.
-docker pull cilium/cilium:v1.9.1
-kind load docker-image cilium/cilium:v1.9.1
+docker pull cilium/cilium:v1.9.5
+kind load docker-image cilium/cilium:v1.9.5
 
-# install 
-helm install cilium cilium/cilium --version 1.9.1 \
+# install
+helm install cilium cilium/cilium --version 1.9.5 \
    --namespace kube-system \
    --set nodeinit.enabled=true \
    --set kubeProxyReplacement=partial \
@@ -23,4 +23,3 @@ helm install cilium cilium/cilium --version 1.9.1 \
    --set bpf.masquerade=false \
    --set image.pullPolicy=IfNotPresent \
    --set ipam.mode=kubernetes
-
